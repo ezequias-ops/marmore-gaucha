@@ -235,7 +235,7 @@ button { cursor: pointer; font: inherit; }
 
 .hero h1 em {
   font-style: normal;
-  color: var(--accent);
+  color: #fff;
 }
 
 .hero-sub {
