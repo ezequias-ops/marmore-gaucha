@@ -1,3 +1,25 @@
+/* ── WhatsApp Tracking ───────────────────────── */
+
+window.dataLayer = window.dataLayer || [];
+
+document.addEventListener(
+  "click",
+  (event) => {
+    const whatsappLink = event.target.closest?.('a[href*="wa.me/5551999436135"]');
+    if (!whatsappLink) return;
+
+    window.dataLayer.push({
+      event: "whatsapp_click",
+      whatsapp_button_text:
+        whatsappLink.getAttribute("aria-label") ||
+        whatsappLink.textContent.trim().replace(/\s+/g, " "),
+      whatsapp_button_classes: whatsappLink.className,
+      whatsapp_url: whatsappLink.href,
+    });
+  },
+  true
+);
+
 /* ── Scroll Reveal ────────────────────────────── */
 
 const revealTargets = document.querySelectorAll(
